@@ -14,26 +14,24 @@
 ## 🛠 사용 기술 및 도구
 #### **프로젝트 관리:** `Github` `Figma` `Notion` `PowerPoint`
   
-#### **Tool:** `JavaScript` `vscode`
-
-#### **사용기술:**  `Swiper` `Animation`
+#### **사용기술:** `JavaScript` `HTML5` `CSS3`
 
 ---
    
 ## 👨‍👩‍👧‍👦 팀원 및 역할 담당
-#### **이성수:** (sub3) 페이지 구현, Header와 Footer 영역 구현, 전체 파일 관리, 요구분석과 구조분석 작성, PPT 제작
+#### **이성수:** sub3 페이지 구현, Header와 Footer 영역 구현, 전체 파일 관리, 요구분석과 구조분석 작성, PPT 제작
 
-#### **성영은:** (sub2) 페이지 구현, GITHUB 관리, 퍼블리싱 가이드 작성, 프로젝트 보고서 작성
+#### **성영은:** sub2 페이지 구현, GITHUB 관리, 퍼블리싱 가이드 작성, 프로젝트 보고서 작성
 
-#### **이현범:**  (sub1) 페이지 구현, PPT 제작
+#### **이현범:**  sub1 페이지 구현, PPT 제작
 
-#### **허수인:** (index) 페이지 구현, PPT 제작, PPT 발표
+#### **허수인:** main(index) 페이지 구현, PPT 제작, PPT 발표
 
 ---
 
 ## 📍 작업 순서
-#### 1. 레퍼런스 사이트 선정
-#### 2. 각 어떤 페이지 구현할지 담당 페이지 분담.
+#### 1. 레퍼런스 사이트 조사
+#### 2. 각 페이지 별 업무 분담
 #### 3. 구현하기 전 figma로 mobile, pc버전 마크업
 #### 4. 홈페이지 구현에 필요한 공용으로 들어가는 부분 asstes 폴더에 정리 (font, common … )
 #### 5. 각자 맡은 페이지 구현 작업 (html → css → js 순서)
@@ -44,8 +42,9 @@
 ---
   
 ## ✏ 퍼블리싱 가이드
-
-### 공통사항
+<details>
+<summary>공통사항</summary>
+  
  - 선택자에 사용되는 띄어쓰기는 언더바(_)로 통일. 단 js의 경우 카멜 표기법을 이용한다.
 
 ```
@@ -76,9 +75,10 @@ margin: 2vw;
 .section {...
 ```
  - 파일에 사용되는 띄어쓰기는 하이픈(-)으로 통일하고 알맞은 폴더에 정리한다.
----
-    
-### HTML
+</details>
+
+<details>
+<summary>HTML</summary>
 
 #### 기본 작성방법
 - 페이지 로고 작업 시 , 기본적으로 img 태그를 사용하나, 필요에 따라 backgroundimage로 처리한다.
@@ -102,10 +102,10 @@ margin: 2vw;
 - 플러그인의 경우 바디 영역 제일 마지막에 삽입하여 작업한다.
 - id 속성자의 경우 꼭 필요한 경우에만 사용하고 불필요한 경우에서의 사용을 지양한다.
 - favicon의 경우 assets 폴더의 png 파일을 link로 걸어서 사용한다.
- 
----
+ </details>
 
-### CSS
+<details>
+<summary>CSS</summary>
 
 - 폰트와 아이콘 등 중복되는 소스는 assets 폴더를 이용하여 공유한다.
 - 컬러는 #컬러코드와 소문자를 이용하여 작성.
@@ -118,10 +118,10 @@ margin: 2vw;
 - 사이즈 값은 상황에 따라 rem, vw를 혼용하여 사용한다.
 - 값이 “0”인 경우에는 단위를 생략한다.
 - 선택자 작성 시 하위 선택자 작성 방식을 사용한다.
- 
----
+</details> 
 
-### JAVA SCRIPT
+<details>
+<summary>JAVA SCRIPT</summary>
 
 - 기본적으로 큰 따옴표(””)를 사용하고 필요 시에만 백틱(``)을 사용한다.
 - const를 사용하여 모든 지역 변수를 선언. 변수를 다시 할당해야 할 경우에만 let을 사용하고 var의 사용은 지양한다.
@@ -132,7 +132,7 @@ const kitTitle = document.querySelector(".kit_title");
 ```
 
 - 필요한 경우 코드 옆에 주석을 달아 현재 코드가 어떤 기능을 하고 있는지 설명한다.
-
+</details>
 ---
    
 ## 📁 디렉토리 구조 분석
@@ -145,11 +145,6 @@ const kitTitle = document.querySelector(".kit_title");
 
 ![앗!츄~요구분석](https://github.com/sslee1210/JavaScriptTeamProject/assets/142865231/0fdd11c2-c5c2-4d37-8d49-007efd0c3053)
 
----
-
-## 📕 PowerPoint
-### [**🔗 PPT 바로가기**](https://drive.google.com/file/d/1sXAVAAeBlcg1zeKZ0RDTccCbTNhgJsfk/view?usp=sharing)
-
 ---  
 
 # 🎈 프로젝트 회고
@@ -159,37 +154,179 @@ const kitTitle = document.querySelector(".kit_title");
 
 ### 상황 1
   - #### 문제 발생:
-      loop 설정을 못해 text가 이동을 하면 서로 이어져야 하는데 이어지지 않아 여백이 생겼음.
+      햄버거버튼 드롭다운 메뉴 구현이 잘 안됨.
 
   - #### 해결 방안:
-      하나의 p에 다 넣어두었던 text를 끊어지는 부분 에서 나눠 여러개의 p 를 만들어주어 하나의 div로 감싸 class옆에 dir=”ltr”, dir=”rtl”을 넣어주어 서로 다른방향으로 움직이게 애니메이션을 설정함.
+      span을 이용해 바 모양을 잡아주고 transform: translate(0, -50%) rotate(90deg)로 마우스를 누르면 x모양으로 바뀌게 함.
+
+```
+<!-- 햄버거 아이콘 -->
+<input type="checkbox" id="icon" />
+  <label for="icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+```
+
+```
+#icon + label {
+  display: block;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  position: relative;
+  bottom: 5vw;
+}
+
+#icon + label > span {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 3px;
+  border-radius: 30px;
+  background: #000;
+  transition: all 0.35s;
+  z-index: 2;
+  left: 85vw;
+}
+
+#icon + label > span:nth-child(1) {
+  top: 0;
+}
+
+#icon + label > span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#icon + label > span:nth-child(3) {
+  bottom: 0;
+}
+
+#icon:checked + label > span:nth-child(1) {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+#icon:checked + label > span:nth-child(2) {
+  opacity: 0;
+}
+
+#icon:checked + label > span:nth-child(3) {
+  bottom: 50%;
+  transform: translateY(50%) rotate(-45deg);
+}
+
+#icon + label + #wrap {
+  position: fixed;
+  top: 0;
+  right: -300%;
+  width: 100vw;
+  height: 100%;
+  background: #f5f5f5;
+  color: #000000;
+  z-index: 1;
+  transition: right 0.3s ease; /* 애니메이션 효과를 주기 위한 transition 속성 */
+```
 
 ### 상황 2
   - #### 문제 발생:
-      sub3 페이지에서 하나의 a태그 안에 text와 이미지까지 넣어보고 a태그에 이미지를 넣는대신 백그라운드 이미지로도 넣어봤는데 hover:border값 을 넣으면 border값만큼 이미지가 뒤로 밀렸음.
+      모바일 버전에서 메뉴 버튼을 누르면 서브 메뉴가 오른쪽에서 왼쪽으로 스윽 나타나는걸 구현하기 힘들었음.
       
   - #### 해결 방안:
-      하나의 div안에 a태그와 img태그를 따로 주어 a 태그에 text내용을 넣어주어 a태그에만 hover:border값을 넣어주었더니 이미지 밀림 현상 없이 border가 잘 적용되었음.
+      자바스크립트로 위치를 right:-300%로 브라우저 바깥에 있다가 메뉴버튼을 누르면 right:0으로 만들었더니 해결됨.
+```
+// 헤더 메뉴바
+window.onload = function () {
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuIcon = document.getElementById("menu-icon");
+    const wrap = document.getElementById("wrap");
+
+    menuIcon.addEventListener("click", function () {
+      // 햄버거 바를 클릭할 때마다 헤더가 나타났다가 사라졌다가 함
+      if (wrap.style.right === "0px") {
+        wrap.style.right = "-300%";
+      } else {
+        wrap.style.right = "0";
+      }
+    });
+  });
+};
+```    
 
 ### 상황 3
   - #### 문제 발생:
       스크롤을 끝까지 내렸을 때 화살표가 오른쪽 하단에 position:absolute로 고정되어 있다가 스크롤을 올리면 position:fixed로 바뀌며 따라 올라가야 되지만 absolute에서 fixed로 바뀌지 않음.
 
   - #### 해결 방안:
-     1. 고정된 상태인 position absolute의 상태에서 디자인을 입히고 그 상태에서 대상에 fixed 상태를 구분지어 줄 클래스를 하나 덧붙여 absolute 상태의 디자인을 덮어씌움.
-      
-     3. 스크롤이 원하는 상태(높이)를 넘어서면 fixed 상태를 만들어주기 위해 덧붙였던 클래스를 삭제해주고, 되돌아가면 fixed 상태로 되돌려주기 위해 클래스를 다시 붙여줌.
+      해결법을 찾지못해 스크롤을 끝까지 내리면 버튼이 사라졌다가 다시 스크롤을 올리면 브라우저 오른쪽 맨 하단에서 따라 올라가는 기능밖에 구현하지 못함 추후에 더 공부할 예정.
 
 ```
-// JS
-var $target = $('.sticky');
-var $footer = $('.trigger');
-$(window).on('scroll', function(){
-  var $window = $(window), anchor = $window.scrollTop() + $window.height();
-  var fot = $footer.offset().top;
-  if (anchor > fot) $target.removeClass('fixed');
-  else $target.addClass('fixed');
+document.addEventListener("DOMContentLoaded", function () {
+  var contentSection = document.getElementById("content");
+  var backButton = document.querySelector(".btn_top"); // "btn_top"이라는 클래스를 가진 요소를 backButton 변수에 저장합니다.
+
+// 스크롤 위치에 따라 '위로 가기' 버튼의 표시 여부를 조정하는 함수입니다.
+  function toggleBackButton() {
+
+    // 스크롤이 "content" 요소의 시작 위치를 넘어갔다면
+    if (window.scrollY > contentSection.offsetTop) {
+
+      // '위로 가기' 버튼을 보이게 합니다.
+      backButton.classList.add("show");
+    } else {
+
+      // 그렇지 않다면 '위로 가기' 버튼을 숨깁니다.
+      backButton.classList.remove("show");
+    }
+  }
+
+  // '위로 가기' 버튼의 위치를 조정하는 함수입니다.
+  function fixButtonPosition() {
+
+    // 화면의 높이를 windowHeight 변수에 저장합니다.
+    var windowHeight = window.innerHeight;
+
+    // '위로 가기' 버튼의 높이를 buttonHeight 변수에 저장합니다.
+    var buttonHeight = backButton.offsetHeight;
+
+    // 스크롤이 페이지 하단에 가까워지면
+    if (
+      window.scrollY + windowHeight >
+      document.body.clientHeight - buttonHeight
+    ) {
+
+      // '위로 가기' 버튼을 절대 위치로 설정하고, 하단에서 -92rem 위치에 둡니다.
+      backButton.style.position = "absolute";
+      backButton.style.bottom = "-92rem";
+    } else {
+
+      // 그렇지 않다면 '위로 가기' 버튼을 고정 위치로 설정하고, 하단에서 2rem 위치에 둡니다.
+      backButton.style.position = "fixed";
+      backButton.style.bottom = "2rem";
+    }
+  }
+
+  // 초기 로딩시 '위로 가기' 버튼의 표시 여부를 결정합니다.
+  toggleBackButton();
+
+  // 초기 로딩시 '위로 가기' 버튼의 위치를 조정합니다.
+  fixButtonPosition();
+
+  // 스크롤이 발생할 때마다 '위로 가기' 버튼의 표시 여부와 위치를 조정합니다.
+  window.addEventListener("scroll", function () {
+    toggleBackButton();
+    fixButtonPosition();
+  });
+
+  // '위로 가기' 버튼을 클릭하면 페이지 상단으로 부드럽게 이동하도록 합니다.
+  backButton.addEventListener("click", function (e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 });
+
 ```
 ---
 
@@ -205,8 +342,9 @@ $(window).on('scroll', function(){
    
     
 - ### 배운 점:
-  #### 1. 자바 스크립트의 이해도를 상승시키고 전보다 더 잘 활용할 수 있게 됨.
-  #### 2. 원본 페이지 코드를 보는건 컨닝이라 생각하여 전혀 안보고 해볼려 했지만 그렇게 되면 문제점이 너무 많아 원본 코드를 보는데 무작정 붙여넣기가 아니라 이해하면서 따라해보니 오히려 더 이해가 빨랐음 다른사람의 코드를 보며 참고하는것도 배우는점이 많다고 생각함.
+  #### 1. 반응형 웹을 만드는게 어려워보여 "잘 할 수 있을까?" 라는 의문이 들고 자신감이 없었지만 막상 만들어보니 허들이 높지 않단걸 깨닫고 자신감이 많이 오름. 
+  #### 2. 자바 스크립트의 이해도를 상승시키고 전보다 더 잘 활용할 수 있게 됨.
+  #### 3. 원본 페이지 코드를 보는건 컨닝이라 생각하여 전혀 안보고 해볼려 했지만 그렇게 되면 문제점이 너무 많아 원본 코드를 보는데 무작정 붙여넣기가 아니라 이해하면서 따라해보니 오히려 더 이해가 빨랐음 다른사람의 코드를 보며 참고하는것도 배우는점이 많다고 생각함.
 
-# 프로젝트 바로가기
-## [🔗 부산 스토리 텔링 협의회 ](https://sslee1210.github.io/JavaScriptTeamProject/index/index.html)
+## PPT&프로토타입
+### [**🔗 PPT 바로가기**](https://drive.google.com/file/d/1sXAVAAeBlcg1zeKZ0RDTccCbTNhgJsfk/view?usp=sharing) [🔗 부산 스토리 텔링 협의회 보러가기 ](https://sslee1210.github.io/JavaScriptTeamProject/index/index.html)
