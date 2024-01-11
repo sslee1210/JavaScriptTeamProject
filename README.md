@@ -145,6 +145,11 @@ const kitTitle = document.querySelector(".kit_title");
 
 ![앗!츄~요구분석](https://github.com/sslee1210/JavaScriptTeamProject/assets/142865231/0fdd11c2-c5c2-4d37-8d49-007efd0c3053)
 
+---
+
+## 9. PowerPoint
+### [**🔗 PPT 바로가기**](https://drive.google.com/file/d/1sXAVAAeBlcg1zeKZ0RDTccCbTNhgJsfk/view?usp=sharing)
+
 ---  
 
 # 🎈 프로젝트 회고
@@ -154,287 +159,38 @@ const kitTitle = document.querySelector(".kit_title");
 
 ### 상황 1
   - #### 문제 발생:
-     데이터를 저장하거나 불러올 방법이 없어 새로고침을 누르거나 창을 나가면 저장했던 데이터가 초기화 되었습니다
+      loop 설정을 못해 text가 이동을 하면 서로 이어져야 하는데 이어지지 않아 여백이 생겼음.
 
-      
-  - #### 원인 파악:
-     데이터를 저장하는 로컬 스토리지가 없었습니다
-
-      
-  - #### 문제 해결:
-     로컬 스토리지를 만들고 handleId, handlePassword로 입력한 아이디와 비밀번호를 각각 ID, PW 상태에 저장, useState를 사용하여 ID와 PW를 관리했습니다
-
-
-
-**1. 페이지가 로드될 때 로컬 스토리지에서 유저 정보를 불러옴**
-
-```
-  useEffect(() => {
-
-   // 로컬 스토리지에서 "user" 항목의 값을 가져옴
-    const savedUser = localStorage.getItem("user");
-    if (savedUser) {
-      navigate("/fridge");
-    }
-  }, [navigate]);
-
-  // ID 입력 값이 변경될 때 호출되는 핸들러
-  const handleId = (e) => {
-    setId(e.target.value); // 입력 값을 ID 상태에 저장
-  };
-
-  // 비밀번호 입력 값이 변경될 때 호출되는 핸들러
-  const handlePassword = (e) => {
-    setPw(e.target.value); // 입력 값을 비밀번호 상태에 저장
-  };
-```
-
-
-**1-1. 로그인 버튼을 클릭했을 때 호출되는 핸들러**
-```
-  const handleLogin = () => {
-
-   // 로컬 스토리지에서 "users" 항목의 값을 가져와서 파싱
-    const users = JSON.parse(localStorage.getItem("users"));
-    const user = users?.find(
-
-      // ID와 비밀번호가 모두 일치하는 유저를 찾음
-      (user) => user.username === id && user.password === pw
-    );
-
-    if (user) { // 일치하는 유저가 있는 경우
-      alert("로그인 성공!");
-
-      // 로그인한 유저의 정보를 로컬 스토리지에 저장
-      localStorage.setItem("user", JSON.stringify(user));
-      navigate("/fridge");
-    } else {
-      alert("로그인 실패. 아이디 또는 비밀번호를 확인해주세요.");
-    }
-  };
-```
-
+  - #### 해결 방안:
+      하나의 p에 다 넣어두었던 text를 끊어지는 부분 에서 나눠 여러개의 p 를 만들어주어 하나의 div로 감싸 class옆에 dir=”ltr”, dir=”rtl”을 넣어주어 서로 다른방향으로 움직이게 애니메이션을 설정함.
 
 ### 상황 2
   - #### 문제 발생:
-     캘린더를 통해 지정된 날짜에 등록한 식료품을 나타내는 기능이 구현되지 않았습니다
+      나의 북구 이야기 영역에서 하나의 a태그 안에 text와 이미지까지 넣어보고 a태그에 이미지를 넣는대신 백그라운드 이미지로도 넣어봤는데 hover:border값 을 넣으면 border값만큼 이미지가 뒤로 밀렸음.
       
-  - #### 원인 파악:
-     사용 중인 캘린더 플러그인이 우리가 의도한 기능을 구현하지 못하는걸 알게 되었습니다
-      
-  - #### 문제 해결:
-     full-calendar 라는 다른 플러그인을 사용하여 플러그인이 가지고 있는 날짜에 따른 이벤트를 띄우는 기능을 통해 원하는 기능을 구현 했습니다
-    
-**2. FullCalendar 라이브러리 설치**
-```
-npm install @fullcalendar/react @fullcalendar/daygrid
-```
-
-**2-1. FullCalendar에서 사용할 이벤트 배열 생성**
-```
-const eventArray = foodList.map((item) => {
-   const endDay = new Date(item.expirationDate);
-   const today = new Date();
-   const timeDiff = endDay.getTime() - today.getTime();
-   const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
-
-return {
-   category: item.category,
-   title: item.foodName,
-   start: item.purchaseDate,
-   quantity: item.quantity,
-   endDay: item.expirationDate,
-   dDay: daysDiff >= 0 ? `D-${daysDiff}` : `D+${Math.abs(daysDiff)}`,
-     };
-  }); setEvents(eventArray);
-}, []);
-```
-
-**2-2. FullCalendar 컴포넌트를 사용하여 캘린더 렌더링**
-```
-<FullCalendar
-   plugins={[dayGridPlugin, interactionPlugin]} // 사용할 플러그인 목록을 배열로 전달
-   initialView="dayGridMonth" // 캘린더가 처음 로드될 때의 뷰 설정
-   events={events} // 캘린더에 표시할 이벤트 정보를 배열로 전달
-   headerToolbar={{ // 캘린더 상단의 툴바 레이아웃 설정
-   left: "prev",
-   center: "title",
-   right: "next",
-   }}
-
-  dateClick={handleDayClick} // 날짜를 클릭했을 때 실행할 함수 전달
-  height={400} // 캘린더의 높이 설정
-/>
-```
-
+  - #### 해결 방안:
+      하나의 div안에 a태그와 img태그를 따로 주어 a 태그에 text내용을 넣어주어 a태그에만 hover:border값을 넣어주었더니 이미지 밀림 현상 없이 border가 잘 적용되었음.
 
 ### 상황 3
   - #### 문제 발생:
-     다른 팀원이 맡은 부분인 Food 페이지에서 식료품 수정을 하고 나서 새로고침을 해야 리스트가 업데이트 되는 점과 수정 시 원래의 값들이 뜨지 않는 문제점들이 생겼습니다
-      
-  - #### 원인 파악:
-     원인 파악이 되어있지않아 직접 확인을 해봤어요 수정 컴포넌트를 모달창으로 띄우는 방식에서 데이터를 불러오는 경로가 꼬인거 같다는 생각이 들었습니다
-      
-  - #### 문제 해결:
-   - 결국 코드를 싹 다 갈아엎고 처음부터 다시 작성했습니다
-   - useEffect Hook을 사용하여 로컬 스토리지와 상태 업데이트 관리했습니다
-   - 로컬 스토리지에 'foodList'라는 키로 식품 목록을 문자열 형태로 저장하고 foodList에서 주어진 food와 같은 항목을 찾아 그 인덱스를 반환하며 해결 했습니다
+      스크롤을 끝까지 내렸을 때 화살표가 오른쪽 하단에 position:absolute로 고정되어 있다가 스크롤을 올리면 position:fixed로 바뀌며 따라 올라가야 되지만 absolute에서 fixed로 바뀌지 않음.
 
+  - #### 해결 방안:
+     1. 고정된 상태인 position absolute의 상태에서 디자인을 입히고 그 상태에서 대상에 fixed 상태를 구분지어 줄 클래스를 하나 덧붙여 absolute 상태의 디자인을 덮어씌움.
+     2. 스크롤이 원하는 상태(높이)를 넘어서면 fixed 상태를 만들어주기 위해 덧붙였던 클래스를 삭제해주고, 되돌아가면 fixed 상태로 되돌려주기 위해 클래스를 다시 붙여줌.
 
-
-**3. useEffect Hook을 사용하여 로컬 스토리지와 상태 업데이트 관리**
 ```
-  useEffect(() => {
-    localStorage.setItem("foodList", JSON.stringify(foodList));
-    setSortedFoodList(foodList);
-  }, [foodList]);
-
-// 식료품 수정 모달 열기 함수
-  const openModal = (food, index) => {
-
-    // 수정 중인 음식의 인덱스 및 내용 설정, 모달 열기
-    const foodIndex = foodList.findIndex((f) => f === food);
-    setEditingIndex(foodIndex);
-    setEditingFood({ ...food });
-    setIsModalOpen(true);
-  };
-
-  // 식료품 수정 모달 닫기 함수
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-
-// 변경된 내용 저장 함수
-const saveChanges = () => {
-
-  // 수정된 식료품 정보로 목록 업데이트, 모달 닫기, 기존 식료품 목록을 복사하여 새로운 배열을 생성
-  const newList = [...foodList];
-
-  // 수정된 식료품을 해당 인덱스에 덮어씌움
-  newList[editingIndex] = editingFood;
-
-  // 식료품 목록을 새로운 목록으로 설정
-  setFoodList(newList);
-
-  closeModal();
-};
+// JS
+var $target = $('.sticky');
+var $footer = $('.trigger');
+$(window).on('scroll', function(){
+  var $window = $(window), anchor = $window.scrollTop() + $window.height();
+  var fot = $footer.offset().top;
+  if (anchor > fot) $target.removeClass('fixed');
+  else $target.addClass('fixed');
+});
 ```
-
-
-**3-1. 식료품 수정 모달창**
-```
-      // isModalOpen이 참일 때만 모달을 표시
-      {isModalOpen && (
-        <div className={styles.modal}>
-          <div className={styles.modalBox}>
-            <img
-              src={path + "/images/food_back_blue.svg"}
-              alt="뒤로가기"
-              className={styles.back}
-              onClick={closeModal}/>
-            <h2>싱싱고 수정하기</h2>
-
-        // setEditingFood 함수를 호출하여 editingFood 상태의 category 값을 업데이트
-            <label>
-              <select
-                value={editingFood.category}
-                onChange={(e) =>
-                  setEditingFood({ ...editingFood, category: e.target.value })}>
-                {categoryOptions.map(
-                  (category, index) =>
-                    category !== "전체" && (
-                      <option key={index} value={category}>
-                        {category}
-                      </option>
-                    ))}
-              </select>
-            </label>
-
-        // 입력된 값이 변경되면 setEditingFood 함수를 호출하여 수정된 식료품 값으로 업데이트
-            <label className={styles.editName}>
-              <span>식재료명</span>
-              <input
-                type="text"
-                value={editingFood.foodName}
-                onChange={(e) =>
-                  setEditingFood({ ...editingFood, foodName: e.target.value })
-                }/>
-            </label>
-
-        // 입력된 값이 변경되면 setEditingFood 함수를 호출하여 수정된 수량 값으로 업데이트
-            <label className={styles.editNum}>
-              <span>수량</span>
-              <input
-                type="number"
-                value={editingFood.quantity}
-                onChange={(e) =>
-                  setEditingFood({ ...editingFood, quantity: e.target.value })
-                }
-                required/>
-            </label>
-
-        // 입력된 값이 변경되면 setEditingFood 함수를 호출하여 수정된 구매일과 소비기간 값으로 업데이트
-            <div className={styles.dateBox}>
-              <label>
-                <span>구매일</span>
-                <input
-                  type="date"
-                  value={editingFood.purchaseDate}
-                  onChange={(e) =>
-                    setEditingFood({
-                      ...editingFood,
-                      purchaseDate: e.target.value,
-                    })}required/>
-              </label>
-
-              <label>
-                <span>소비기간</span>
-                <input
-                  type="date"
-                  value={editingFood.expirationDate}
-                  onChange={(e) =>
-                    setEditingFood({
-                      ...editingFood,
-                      expirationDate: e.target.value,
-                    })}required/>
-              </label>
-
-        // 입력된 값이 변경되면 setEditingFood 함수를 호출하여 수정된 메모 값을 업데이트
-            </div>
-            <label className={styles.editMemo}>
-              <span>메모</span>
-              <textarea
-                value={editingFood.note}
-                onChange={(e) =>
-                  setEditingFood({ ...editingFood, note: e.target.value })
-                }/>
-            </label>
-```
-
-
-
-### 상황 4
-  - #### 문제 발생:
-     로컬 스토리지로는 각 사용자마다 다른 식료품 목록을 보여주는 구현이 어려웠습니다 ( 저장된 데이터에 다른 데이터를 연결하는 부분이 잘 되지 않았습니다)
-    
-  - #### 원인 파악:
-     데이터베이스(ex.몽고DB)를 이용하여 서버 연결을 통해 회원정보와 데이터 정보를 연결해야 했습니다
-      
-  - #### 문제 해결:
-     프로젝트가 끝난 후 혼자 독학하며 연결하기로 했습니다
-
-
-
-### 상황 5
-  - #### 문제 발생:
-     어색한 분위기에 서로 소통도 잘 안되어 역할을 분담하거나 개개인의 작업 진행 상황을 판단하지 못하였습니다
-      
-  - #### 원인 파악:
-     처음 본 사람들끼리 이루어진 팀이라 서로 낯가림이 심했습니다
-      
-  - #### 문제 해결:
-     용기를 내 팀원들에게 먼저 다가가 단톡방을 만들고 대화를 주도하여 친밀감을 형성시키고 밝은 분위기로 회의를 이끌어 좋은 분위기에서 프로젝트를 마칠 수 있었습니다
-
+---
 
 # 프로젝트 완료 리뷰
 - ### 아쉬웠던 점:
