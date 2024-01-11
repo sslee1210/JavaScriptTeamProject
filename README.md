@@ -137,13 +137,13 @@ const kitTitle = document.querySelector(".kit_title");
    
 ## 📁 디렉토리 구조 분석
     
-   ![앗!츄~구조분석](https://github.com/sslee1210/JavaScriptTeamProject/assets/142865231/b0fce6f0-2117-42c9-9e73-1ad8fe7e746a)
+<img src="https://github.com/sslee1210/JavaScriptTeamProject/assets/142865231/b0fce6f0-2117-42c9-9e73-1ad8fe7e746a.png"  width="550" height="auto"/>
    
 ---
 
 ## 📃 요구 분석
 
-![앗!츄~요구분석](https://github.com/sslee1210/JavaScriptTeamProject/assets/142865231/0fdd11c2-c5c2-4d37-8d49-007efd0c3053)
+<img src="https://github.com/sslee1210/JavaScriptTeamProject/assets/142865231/0fdd11c2-c5c2-4d37-8d49-007efd0c3053.png"  width="600" height="auto"/>
 
 ---  
 
