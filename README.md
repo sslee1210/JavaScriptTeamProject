@@ -266,30 +266,30 @@ window.onload = function () {
 ```
 document.addEventListener("DOMContentLoaded", function () {
   var contentSection = document.getElementById("content");
-  var backButton = document.querySelector(".btn_top"); // "btn_top"이라는 클래스를 가진 요소를 backButton 변수에 저장합니다.
+  var backButton = document.querySelector(".btn_top"); // "btn_top"이라는 클래스를 가진 요소를 backButton 변수에 저장
 
-// 스크롤 위치에 따라 '위로 가기' 버튼의 표시 여부를 조정하는 함수입니다.
+// 스크롤 위치에 따라 '위로 가기' 버튼의 표시 여부를 조정
   function toggleBackButton() {
 
     // 스크롤이 "content" 요소의 시작 위치를 넘어갔다면
     if (window.scrollY > contentSection.offsetTop) {
 
-      // '위로 가기' 버튼을 보이게 합니다.
+      // '위로 가기' 버튼을 보이게
       backButton.classList.add("show");
     } else {
 
-      // 그렇지 않다면 '위로 가기' 버튼을 숨깁니다.
+      // 그렇지 않다면 '위로 가기' 버튼을 숨김
       backButton.classList.remove("show");
     }
   }
 
-  // '위로 가기' 버튼의 위치를 조정하는 함수입니다.
+  // '위로 가기' 버튼의 위치를 조정
   function fixButtonPosition() {
 
-    // 화면의 높이를 windowHeight 변수에 저장합니다.
+    // 화면의 높이를 windowHeight 변수에 저장
     var windowHeight = window.innerHeight;
 
-    // '위로 가기' 버튼의 높이를 buttonHeight 변수에 저장합니다.
+    // '위로 가기' 버튼의 높이를 buttonHeight 변수에 저장
     var buttonHeight = backButton.offsetHeight;
 
     // 스크롤이 페이지 하단에 가까워지면
@@ -298,30 +298,30 @@ document.addEventListener("DOMContentLoaded", function () {
       document.body.clientHeight - buttonHeight
     ) {
 
-      // '위로 가기' 버튼을 절대 위치로 설정하고, 하단에서 -92rem 위치에 둡니다.
+      // '위로 가기' 버튼을 절대 위치로 설정하고, 하단에서 -92rem 위치에 둠
       backButton.style.position = "absolute";
       backButton.style.bottom = "-92rem";
     } else {
 
-      // 그렇지 않다면 '위로 가기' 버튼을 고정 위치로 설정하고, 하단에서 2rem 위치에 둡니다.
+      // 그렇지 않다면 '위로 가기' 버튼을 고정 위치로 설정하고, 하단에서 2rem 위치에 둠둠
       backButton.style.position = "fixed";
       backButton.style.bottom = "2rem";
     }
   }
 
-  // 초기 로딩시 '위로 가기' 버튼의 표시 여부를 결정합니다.
+  // 초기 로딩시 '위로 가기' 버튼의 표시 여부를 결정
   toggleBackButton();
 
-  // 초기 로딩시 '위로 가기' 버튼의 위치를 조정합니다.
+  // 초기 로딩시 '위로 가기' 버튼의 위치를 조정
   fixButtonPosition();
 
-  // 스크롤이 발생할 때마다 '위로 가기' 버튼의 표시 여부와 위치를 조정합니다.
+  // 스크롤이 발생할 때마다 '위로 가기' 버튼의 표시 여부와 위치를 조정
   window.addEventListener("scroll", function () {
     toggleBackButton();
     fixButtonPosition();
   });
 
-  // '위로 가기' 버튼을 클릭하면 페이지 상단으로 부드럽게 이동하도록 합니다.
+  // '위로 가기' 버튼을 클릭하면 페이지 상단으로 부드럽게 이동하도록
   backButton.addEventListener("click", function (e) {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -345,7 +345,7 @@ document.addEventListener("DOMContentLoaded", function () {
 - ### 배운 점:
   #### 1. 반응형 웹을 만드는게 어려워보여 "잘 할 수 있을까?" 라는 의문이 들고 자신감이 없었지만 막상 만들어보니 허들이 높지 않단걸 깨닫고 자신감이 많이 오름. 
   #### 2. 자바 스크립트의 이해도를 상승시키고 전보다 더 잘 활용할 수 있게 됨.
-  #### 3. 원본 페이지 코드를 보는건 컨닝이라 생각하여 전혀 안보고 해볼려 했지만 그렇게 되면 문제점이 너무 많아 원본 코드를 보는데 무작정 붙여넣기가 아니라 이해하면서 따라해보니 오히려 더 이해가 빨랐음 다른사람의 코드를 보며 참고하는것도 배우는점이 많다고 생각함.
-
+  #### 3. 작업 속도가 느린 팀원들을 도와주며 내 작업을 병행하였는데 많이 힘들고 피곤했지만 내가 더 많은 작업을 하게 된다해도 다 나한테 도움이 된다는 긍정적인 마인드를 가지게 됨
+  
 ## PPT&프로토타입
 ### [**🔗 PPT 바로가기**](https://drive.google.com/file/d/1sXAVAAeBlcg1zeKZ0RDTccCbTNhgJsfk/view?usp=sharing) [🔗 부산 스토리 텔링 협의회 보러가기 ](https://sslee1210.github.io/JavaScriptTeamProject/index/index.html)
