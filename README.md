@@ -166,7 +166,7 @@ const kitTitle = document.querySelector(".kit_title");
 
 ### 상황 2
   - #### 문제 발생:
-      나의 북구 이야기 영역에서 하나의 a태그 안에 text와 이미지까지 넣어보고 a태그에 이미지를 넣는대신 백그라운드 이미지로도 넣어봤는데 hover:border값 을 넣으면 border값만큼 이미지가 뒤로 밀렸음.
+      sub3 페이지에서 하나의 a태그 안에 text와 이미지까지 넣어보고 a태그에 이미지를 넣는대신 백그라운드 이미지로도 넣어봤는데 hover:border값 을 넣으면 border값만큼 이미지가 뒤로 밀렸음.
       
   - #### 해결 방안:
       하나의 div안에 a태그와 img태그를 따로 주어 a 태그에 text내용을 넣어주어 a태그에만 hover:border값을 넣어주었더니 이미지 밀림 현상 없이 border가 잘 적용되었음.
@@ -177,7 +177,8 @@ const kitTitle = document.querySelector(".kit_title");
 
   - #### 해결 방안:
      1. 고정된 상태인 position absolute의 상태에서 디자인을 입히고 그 상태에서 대상에 fixed 상태를 구분지어 줄 클래스를 하나 덧붙여 absolute 상태의 디자인을 덮어씌움.
-     2. 스크롤이 원하는 상태(높이)를 넘어서면 fixed 상태를 만들어주기 위해 덧붙였던 클래스를 삭제해주고, 되돌아가면 fixed 상태로 되돌려주기 위해 클래스를 다시 붙여줌.
+      
+     3. 스크롤이 원하는 상태(높이)를 넘어서면 fixed 상태를 만들어주기 위해 덧붙였던 클래스를 삭제해주고, 되돌아가면 fixed 상태로 되돌려주기 위해 클래스를 다시 붙여줌.
 
 ```
 // JS
