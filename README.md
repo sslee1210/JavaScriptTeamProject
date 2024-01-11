@@ -48,32 +48,33 @@
 ### 공통사항
  - 선택자에 사용되는 띄어쓰기는 언더바(_)로 통일. 단 js의 경우 카멜 표기법을 이용한다.
 
-     ```
-    // 언더바 사용
-    <div class = "course_box">
-     ```
-     ```
-    // 카멜 표기법 사용
-    "courseBox"
-     ```
+```
+// 언더바 사용
+<div class = "course_box">
+```
+
+```
+// 카멜 표기법 사용
+"courseBox"
+```
 
  - 들여쓰기는 space 2를 기준으로 한다.
  - W3C 유효성 검사를 이용해 오류를 확인하여 작업한다.
  - 해상도 기준은 PC = 1200px로 정하고 모바일 우선으로 작업한다.
  - 문서에서 각 영역은 각주와 한 줄 띄어쓰기를 이용해 정리한다.
-     ```
-     </section>
-     <!-- section -->
-     <section> ...
-     ```
-
-     ```
-     ...
-     margin: 2vw;
-     }
-     /* section */
-     .section {...
-     ```
+```
+</section>
+<!-- section -->
+<section> ...
+```
+     
+```
+...
+margin: 2vw;
+}
+/* section */
+.section {...
+```
  - 파일에 사용되는 띄어쓰기는 하이픈(-)으로 통일하고 알맞은 폴더에 정리한다.
 ---
     
@@ -84,19 +85,19 @@
 - 페이지 내 각 영역은 역할에 따라 head, section, footer 태그를 사용한다.
 - 선택자 명은 페이지 내용을 바탕으로 의미 있고 알아보기 쉬운 이름을 사용한다.
  
-  ```
-  <div class = "course">
-  <div class = "course_box">
-  ```
+```
+<div class = "course">
+<div class = "course_box">
+```
 
 #### 연결방법
 - 외부문서는 <head> 영역 <title>바로 밑에 <link>로 작성한다.
 - <reset>, <common>, <favicon>, <style>, <js> 순서로 작성한다.
 - 미디어 쿼리 기준 선언은 스타일 시트의 <link> 태그 안에 작성한다.
 
-  ```
-  <link rel = "stylesheet" href = "./style-pc.css" media = "(width >= 1200px)">
-  ```
+```
+<link rel = "stylesheet" href = "./style-pc.css" media = "(width >= 1200px)">
+```
 
 - 플러그인의 경우 바디 영역 제일 마지막에 삽입하여 작업한다.
 - id 속성자의 경우 꼭 필요한 경우에만 사용하고 불필요한 경우에서의 사용을 지양한다.
@@ -109,10 +110,10 @@
 - 폰트와 아이콘 등 중복되는 소스는 assets 폴더를 이용하여 공유한다.
 - 컬러는 #컬러코드와 소문자를 이용하여 작성.
 
- ```
+```
 #FF5C9B, rgb(225,92,155) ... - X
 #ff5c9b - O
- ```
+```
 
 - 사이즈 값은 상황에 따라 rem, vw를 혼용하여 사용한다.
 - 값이 “0”인 경우에는 단위를 생략한다.
