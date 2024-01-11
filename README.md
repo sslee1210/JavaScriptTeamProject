@@ -20,7 +20,7 @@
 
 ---
    
-## 2. 팀원 및 역할 담당
+## 👨‍👩‍👧‍👦 팀원 및 역할 담당
 #### **이성수:** (sub3) 페이지 구현, Header와 Footer 영역 구현, 전체 파일 관리, 요구분석과 구조분석 작성, PPT 제작
 
 #### **성영은:** (sub2) 페이지 구현, GITHUB 관리, 퍼블리싱 가이드 작성, 프로젝트 보고서 작성
@@ -31,7 +31,7 @@
 
 ---
 
-##📍 작업 순서
+## 📍 작업 순서
 #### 1. 레퍼런스 사이트 선정
 #### 2. 각 어떤 페이지 구현할지 담당 페이지 분담.
 #### 3. 구현하기 전 figma로 mobile, pc버전 마크업
@@ -43,7 +43,7 @@
 
 ---
   
-## 6. 퍼블리싱 가이드
+## ✏ 퍼블리싱 가이드
 
 ### 공통사항
  - 선택자에 사용되는 띄어쓰기는 언더바(_)로 통일. 단 js의 경우 카멜 표기법을 이용한다.
@@ -135,19 +135,19 @@ const kitTitle = document.querySelector(".kit_title");
 
 ---
    
-## 5. 디렉토리 구조 분석
+## 📁 디렉토리 구조 분석
     
    ![앗!츄~구조분석](https://github.com/sslee1210/JavaScriptTeamProject/assets/142865231/8e132484-826c-4a1c-808d-750a6ddde20c)
    
 ---
 
-## 6. 요구 분석
+## 📃 요구 분석
 
 ![앗!츄~요구분석](https://github.com/sslee1210/JavaScriptTeamProject/assets/142865231/0fdd11c2-c5c2-4d37-8d49-007efd0c3053)
 
 ---
 
-## 9. PowerPoint
+## 📕 PowerPoint
 ### [**🔗 PPT 바로가기**](https://drive.google.com/file/d/1sXAVAAeBlcg1zeKZ0RDTccCbTNhgJsfk/view?usp=sharing)
 
 ---  
@@ -155,7 +155,7 @@ const kitTitle = document.querySelector(".kit_title");
 # 🎈 프로젝트 회고
 
 
-## 문제 및 해결
+## 🗝 문제 및 해결
 
 ### 상황 1
   - #### 문제 발생:
@@ -193,7 +193,7 @@ $(window).on('scroll', function(){
 ```
 ---
 
-# 프로젝트 완료 리뷰
+# 😶 프로젝트 완료 리뷰
 - ### 아쉬웠던 점:
   #### 1. 리액트를 활용함에 어렵고 서툴렀던 탓에 프로젝트 진행 속도가 늦어졌습니다
   #### 2. 낯을 많이 가리는 성격이라 팀원들과 좋은 팀워크를 이루지 못할 거라 생각했습니다
