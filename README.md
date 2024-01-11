@@ -451,4 +451,4 @@ const saveChanges = () => {
   #### 2. 처음 만난 사람과의 친밀감을 형성하는 법을 알게 되어 팀원들과의 원활한 커뮤니케이션으로 협업 능력을 향상시켰고 밝은 팀 분위기를 유지하였으며, 팀원들을 이끌 수 있는 리더십 능력을 키울 수 있었습니다
 
 # 프로젝트 바로가기
-## [🔗 부산 스토리 텔링 협의회 ](https://sslee1210.github.io/JavaScript-teamproject/index/index.html)
+## [🔗 부산 스토리 텔링 협의회 ](https://sslee1210.github.io/JavaScriptTeamProject/index/index.html)
